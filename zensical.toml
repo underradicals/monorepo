@@ -1,0 +1,148 @@
+[project]
+site_url = "https://underradicals.github.io/"
+site_name = "Documentation"
+site_description = "Monorepo documentation for multiple projects"
+site_author = "Joseph Burton"
+
+copyright = "Copyright &copy; 2026 Joseph Burton"
+
+repo_url = "https://github.com/underradicals/my_projects"
+repo_name = "monorepo"
+edit_uri = "https://github.com/underradicals/my_projects/tree/main/docs"
+
+nav = [
+    { "Databases" = [
+        { "Postgres" = [
+            { "Postgres RBAC" = "Databases/postgres_security.md" },
+            { "Create Database" = "Databases/create_database.md" },
+            { "Create Schema" = "Databases/create_schema.md" },
+        ] },
+    ] },
+    { "Business" = [
+        { "Managerial Accounting" = [
+            { "Managerial Accounting" = "Business/managerial_accounting.md" },
+            { "Job Costing" = "Business/job_costing.md" },
+        ] },
+    ] },
+    { "Code Samples" = [
+        { "Python" = [
+            { "Single Download Sync" = "CodeSamples/httpx_sync_download.md" },
+            { "Download Many Sync-ish" = "CodeSamples/download_many_files.md" },
+        ] },
+    ] },
+]
+
+extra_css = [
+    "stylesheets/extra.css",
+]
+extra_javascript = [
+    { path = "javascripts/extra.js", type = "module" },
+]
+
+[project.theme]
+custom_dir = "docs/overrides"
+variant = "modern"
+font.text = "Helvetica Neue"
+# favicon = "images/favicon.png"
+
+language = "en"
+features = [
+    "announce.dismiss",
+    "content.action.edit",
+    "content.action.view",
+    "content.code.annotate",
+    "content.code.copy",
+    "content.code.select",
+    "content.footnote.tooltips",
+    "content.tabs.link",
+    "content.tooltips",
+    "header.autohide",
+    "navigation.expand",
+    "navigation.footer",
+    "navigation.indexes",
+    "navigation.instant",
+    "navigation.instant.prefetch",
+    # "navigation.instant.progress",
+    "navigation.path",
+    # "navigation.prune",
+    # "navigation.sections",
+    "navigation.tabs",
+    "navigation.tabs.sticky",
+    "navigation.top",
+    "navigation.tracking",
+    "search.highlight",
+    # "toc.follow",
+    # "toc.integrate",
+]
+
+[[project.theme.palette]]
+media = "(prefers-color-scheme)"
+toggle.icon = "lucide/sun-moon"
+toggle.name = "Switch to light mode"
+
+[[project.theme.palette]]
+media = "(prefers-color-scheme: light)"
+scheme = "default"
+toggle.icon = "lucide/sun"
+toggle.name = "Switch to dark mode"
+
+[[project.theme.palette]]
+media = "(prefers-color-scheme: dark)"
+scheme = "slate"
+toggle.icon = "lucide/moon"
+toggle.name = "Switch to system preference"
+
+[[project.extra.social]]
+icon = "fontawesome/brands/github"
+link = "https://github.com/underradicals"
+
+[[project.extra.social]]
+icon = "fontawesome/brands/linkedin"
+link = "https://www.linkedin.com/in/underradicals"
+
+[project.markdown_extensions]
+attr_list = {}
+md_in_html = {}
+pymdownx.blocks.caption = {}
+toc = { permalink = "⚓︎", toc_depth = "2-4" }
+# generic = truec;eclear
+tables = {}
+abbr = {}
+admonition = {}
+def_list = {}
+footnotes = {}
+pymdownx.betterem = {}
+pymdownx.caret = {}
+pymdownx.details = {}
+pymdownx.inlinehilite = {}
+pymdownx.keys = {}
+pymdownx.magiclink = {}
+pymdownx.mark = {}
+pymdownx.smartsymbols = {}
+pymdownx.arithmatex = {}
+pymdownx.tilde = {}
+
+[project.markdown_extensions.pymdownx.emoji]
+emoji_generator = "zensical.extensions.emoji.to_svg"
+emoji_index = "zensical.extensions.emoji.twemoji"
+
+[project.markdown_extensions.pymdownx.highlight]
+anchor_linenums = true
+line_spans = "__span"
+pygments_lang_class = true
+
+
+[project.markdown_extensions.pymdownx.superfences]
+custom_fences = [
+    { name = "mermaid", class = "mermaid", format = "pymdownx.superfences.fence_code_format" },
+]
+
+[project.markdown_extensions.pymdownx.tabbed]
+alternate_style = true
+combine_header_slug = true
+
+[project.markdown_extensions.pymdownx.tasklist]
+custom_checkbox = true
+
+[project.markdown_extensions.pymdownx.snippets]
+base_path = "includes"

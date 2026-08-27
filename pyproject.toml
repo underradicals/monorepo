@@ -1,0 +1,40 @@
+[project]
+name = "monorepo"
+version = "0.1.0"
+description = "A monorepo"
+readme = "README.md"
+authors = [
+    { name = "Joseph", email = "underradicals@gmail.com" },
+]
+requires-python = ">=3.14"
+classifiers = [
+    "Programming Language :: Python :: 3 :: Only",
+    "Programming Language :: Python :: 3.14",
+]
+dependencies = [
+]
+
+
+[build-system]
+requires = [
+    "uv_build>=0.12.0,<0.13.0",
+]
+build-backend = "uv_build"
+
+[tool.uv]
+package = false
+
+[tool.uv.workspace]
+members = [
+    "apps/d2-data",
+    "playground/play_httpx",
+    "packages/paths_io",
+]
+
+[dependency-groups]
+dev = [
+    "isort>=8.0.1",
+    "pytest>=9.1.1",
+    "ruff>=0.16.3",
+    "zensical>=0.0.54",
+]
