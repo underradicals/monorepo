@@ -29,6 +29,8 @@ members = [
     "apps/d2-data",
     "playground/play_httpx",
     "packages/paths_io",
+    "packages/http_client",
+    "packages/utils",
 ]
 
 [dependency-groups]
